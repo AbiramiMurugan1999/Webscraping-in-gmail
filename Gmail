@@ -1,0 +1,10 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+from webdriver_manager.chrome import ChromeDriverManager
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.get('https://www.gmail.com')
+usermail = driver.find_element_by_id('identifierId')
+usermail.send_keys('your mail id')
+log_in_button = driver.find_element_by_xpath('//*[@id="identifierNext"]/span/span')
+log_in_button.click()
